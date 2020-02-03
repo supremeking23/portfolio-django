@@ -55,48 +55,15 @@
 
   <section class="jumbotron text-center">
     <div class="container">
-      <h1>Ivan Christian Jay</h1>
-      <p class="lead text-muted">Web Developer, Python Developer, I love playing Basketball</p>
+      <h1>{{job.app_name}}</h1>
+      <p class="lead text-muted">{{job.summary}}</p>
+      <img src="{{ job.image.url }}" height="300" class="rounded">
       <p>
-        <a href="mailto:icjfuncion@gmail.com" class="btn btn-primary my-2">Email Me</a>
+        <a href="{% url 'home' %}" class="btn btn-primary my-2">Back</a>
       </p>
-      <img src="{% static 'ivan.jpg '%}" height="300" class="rounded">
     </div>
   </section>
 
-  <div class="album py-5 bg-light">
-    <div class="container">
-
-
-
-	 
-	
-
-
-
-      <div class="row">
-      	{% for job in jobs.all %}
-	        <div class="col-md-4">
-	          <div class="card mb-4 shadow-sm">
-	           	<img class="card-img-top" src="{{job.image.url}}">
-	            <div class="card-body">
-	              <h3 class="card-text"><a href="{% url 'detail' job.id %}">{{job.app_name}}</a></h3>
-	              <p class="card-text">{{job.summary}}</p>
-	              <p class="card-text">site url: {{job.site_url}}</p>
-	              
-	              <div class="d-flex justify-content-between align-items-center">
-	                <div class="btn-group">
-	                	</a>
-	                </div>
-	                <small class="text-muted">{{job.date_published}}</small>
-	              </div>
-	            </div>
-	          </div>
-	        </div>
-        {% endfor %}
-      </div>
-    </div>
-  </div>
 
 </main>
 
